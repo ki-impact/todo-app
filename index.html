@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Todo App</h1>
+
+    <form id="todo-form">
+      <div class="form-row">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Neue Aufgabe hinzufügen…"
+          autocomplete="off"
+          maxlength="200"
+        />
+        <button type="submit">Hinzufügen</button>
+      </div>
+      <div class="form-row form-row--due">
+        <label for="due-date" class="due-label">Fällig am</label>
+        <input type="date" id="due-date" />
+        <input type="time" id="due-time" />
+      </div>
+      <div class="form-row form-row--folder">
+        <label for="todo-folder" class="due-label">Ordner</label>
+        <select id="todo-folder"></select>
+      </div>
+      <div class="form-row form-row--new-folder hidden" id="new-folder-row">
+        <input type="text" id="new-folder-input" placeholder="Ordnername…" maxlength="50" autocomplete="off" />
+        <button type="button" id="new-folder-btn">Erstellen</button>
+      </div>
+    </form>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Alle</button>
+      <button class="filter-btn" data-filter="active">Offen</button>
+      <button class="filter-btn" data-filter="done">Erledigt</button>
+    </div>
+
+    <div class="folder-filters" id="folder-filters"></div>
+
+    <ul id="todo-list"></ul>
+
+    <div class="footer" id="footer">
+      <span id="count"></span>
+      <button id="clear-done">Erledigte löschen</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
